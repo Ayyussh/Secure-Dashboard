@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter for routing context
+import { BrowserRouter } from 'react-router-dom'; 
 import App from './App';
 
 test('renders sign up page link', () => {

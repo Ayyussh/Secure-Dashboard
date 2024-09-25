@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../feature/authSlice';
 import { RootState } from '../store';
 import { useNavigate } from 'react-router-dom';
-import './Dashboard.css'; // External CSS for custom animations
+import './Dashboard.css'; 
 
 function Dashboard() {
   const user = useSelector((state: RootState) => state.auth.user);

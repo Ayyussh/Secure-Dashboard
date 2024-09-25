@@ -19,7 +19,6 @@ function SignUp() {
         password,
       });
 
-      // If sign up is successful, log the user in and navigate to dashboard
       dispatch(login({ email, token: response.data.token }));
       navigate('/dashboard');
     } catch (err) {

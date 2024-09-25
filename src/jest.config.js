@@ -1,16 +1,16 @@
 module.exports = {
-    preset: 'ts-jest', // Use ts-jest for TypeScript files
-    testEnvironment: 'jsdom', // Simulate a browser environment
+    preset: 'ts-jest', 
+    testEnvironment: 'jsdom', 
     transform: {
-      '^.+\\.(ts|tsx)$': 'ts-jest', // Handle TypeScript files
-      '^.+\\.(js|jsx)$': 'babel-jest', // Handle JavaScript files
+      '^.+\\.(ts|tsx)$': 'ts-jest',
+      '^.+\\.(js|jsx)$': 'babel-jest', 
     },
     transformIgnorePatterns: [
-      '/node_modules/(?!(axios)/)', // Allow transformation of axios or other ES modules
+      '/node_modules/(?!(axios)/)', 
     ],
     moduleNameMapper: {
-      '\\.(css|less|scss|sass)$': 'identity-obj-proxy', // Mock CSS imports
+      '\\.(css|less|scss|sass)$': 'identity-obj-proxy', 
     },
-    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'], // Add custom matchers for DOM
+    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'], 
   };
   

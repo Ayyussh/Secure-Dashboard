@@ -6,18 +6,18 @@ describe('authSlice', () => {
     const initialState = { user: null, token: null };
 
     // Dispatch the login action
-    const newState = authReducer(initialState, login({ email: 'test@example.com', token: 'token123' }));
+    const newState = authReducer(initialState, login({ email: 'eve.holt@reqres.in', token: 'token123' }));
 
     // Expect the state to be updated correctly
     expect(newState).toEqual({
-      user: { email: 'test@example.com' },
+      user: { email: 'eve.holt@reqres.in' },
       token: 'token123',
     });
   });
 
   // Testing the logout action
   it('should handle logout', () => {
-    const initialState = { user: { email: 'test@example.com' }, token: 'token123' };
+    const initialState = { user: { email: 'eve.holt@reqres.in' }, token: 'token123' };
 
     // Dispatch the logout action
     const newState = authReducer(initialState, logout());

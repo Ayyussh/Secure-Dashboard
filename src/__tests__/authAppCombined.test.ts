@@ -65,16 +65,16 @@ describe('Authentication Suite', () => {
     it('should handle login', () => {
       const initialState = { user: null, token: null };
 
-      const newState = authReducer(initialState, login({ email: 'test@example.com', token: 'token123' }));
+      const newState = authReducer(initialState, login({ email: 'eve.holt@reqres.in', token: 'token123' }));
 
       expect(newState).toEqual({
-        user: { email: 'test@example.com' },
+        user: { email: 'eve.holt@reqres.in' },
         token: 'token123',
       });
     });
 
     it('should handle logout', () => {
-      const initialState = { user: { email: 'test@example.com' }, token: 'token123' };
+      const initialState = { user: { email: 'eve.holt@reqres.in' }, token: 'token123' };
 
       const newState = authReducer(initialState, logout());
 
@@ -99,14 +99,12 @@ describe('Authentication Suite', () => {
 
       await waitFor(() => 
         expect(axios.post).toHaveBeenCalledWith('https://reqres.in/api/login', {
-          email: 'test@example.com',
-          password: 'password123',
+          email: 'eve.holt@reqres.in',
+          password: 'cityslicka',
         })
       );
-
-      // Check if the token is set in the store
       const state = mockStore.getState().auth;
-      expect(state.token).toBe(mockToken); // Ensure the token is set correctly
+      expect(state.token).toBe(mockToken); 
     });
 
     it('should display error message if login fails', async () => {
@@ -129,7 +127,7 @@ describe('Authentication Suite', () => {
     it('should display user email and log out', () => {
       const preloadedState = {
         auth: {
-          user: { email: 'test@example.com' },
+          user: { email: 'eve.holt@reqres.in' },
           token: 'testToken',
         },
       };
